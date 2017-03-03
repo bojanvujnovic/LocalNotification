@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MyContentExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0B62E3411E69BA14005A5D20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0B8E94DA1E69AA8800FD2270</key>
 		<dict>
 			<key>primary</key>
