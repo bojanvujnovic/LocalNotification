@@ -47,8 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func configureUserNotifications() {
-        let category = UNNotificationCategory(identifier: Notification.category, actions: [], intentIdentifiers: [], options: [])
-        UNUserNotificationCenter.current().setNotificationCategories([category])
+        
+        let favouriteAction = UNNotificationAction(identifier: NotificatioN.fistIdentifier, title: NotificatioN.fistTitle, options: [])
+        let dismissAction = UNNotificationAction(identifier: NotificatioN.dismissIdentifier, title: NotificatioN.dismissTitle, options: [])
+        
+        let category = UNNotificationCategory(identifier: NotificatioN.category, actions: [favouriteAction, dismissAction], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])       
+        
     }   
     
     
@@ -60,6 +65,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     //Method when App is in the Foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.alert)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("Response received for \(response.actionIdentifier)")
+        completionHandler()
     }
 }
 

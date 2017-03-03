@@ -1,5 +1,5 @@
 //
-//  NotificationCategory.swift
+//  NotificatioN.swift
 //  LocalNotification
 //
 //  Created by Mac on 3/3/17.

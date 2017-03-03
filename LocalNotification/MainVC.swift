@@ -37,12 +37,12 @@ class MainVC: UIViewController {
     func scheduleNotification(inSeconds: TimeInterval, completion: @escaping (_ success: Bool) -> () ) {
         //Notification Content
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title =  Notification.title
-        notificationContent.subtitle = Notification.subtitle
-        notificationContent.body = Notification.body
+        notificationContent.title =  NotificatioN.title
+        notificationContent.subtitle = NotificatioN.subtitle
+        notificationContent.body = NotificatioN.body
         
         //Only For Notification Content Extension
-        notificationContent.categoryIdentifier = Notification.category
+        notificationContent.categoryIdentifier = NotificatioN.category
         
         //Attachment
         let myImage = "lion"
@@ -52,7 +52,7 @@ class MainVC: UIViewController {
             return
         }
         var attachment: UNNotificationAttachment
-        guard let attach = try? UNNotificationAttachment(identifier: Notification.identifier, url: imageURL, options: .none) else  {
+        guard let attach = try? UNNotificationAttachment(identifier: NotificatioN.identifier, url: imageURL, options: .none) else  {
             completion(false)
             print("Notification Attachment error")
             return
@@ -64,7 +64,7 @@ class MainVC: UIViewController {
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
         //Notification Request
         
-        let request = UNNotificationRequest(identifier: Notification.identifier , content: notificationContent, trigger: notificationTrigger)
+        let request = UNNotificationRequest(identifier: NotificatioN.identifier , content: notificationContent, trigger: notificationTrigger)
         
         
         //Add Notification
